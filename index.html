@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Twitch Chat Highlight</title>
+    <link rel="stylesheet" href="assets/css/bootstrap452.min.css">
+    <link rel="stylesheet" href="assets/css/dark.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <h1 class="h3 pt-4 pl-lg-4 text-center">Twitch Chat Highlight</h1>
+        </div>
+        <div class="col-2 text-center">
+            <img src="assets/images/robot.gif" style="width: 60px;" alt="">
+        </div>
+    </div>
+    <div class="form-label-group mb-2">
+        <label for="mainAccount">Twitch Account</label>
+        <input type="text" id="mainAccount" class="form-control">
+    </div>
+    <br>
+    <button class="btn btn-lg btn-success btn-block" id="generate_button" type="button">Generate Overlay and Dock Links</button>
+    <br>
+    <div id="overlaylink" class="hide"></div>
+    <div id="docklink" class="hide"></div>
+</div>
+<script>
+    document.getElementById("generate_button").addEventListener("click", function (e) {
+        let mainAccount = document.getElementById("mainAccount").value;
+        if (!mainAccount) {
+            alert('Twitch username is not set');
+        }
+
+        //build urls
+        if (mainAccount) {
+            let srcURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            let overlayUrl = srcURL + "overlay.html?channel=" + mainAccount.toLowerCase();
+            let dockUrl = srcURL + "dock.html?channel=" + mainAccount.toLowerCase();
+            document.getElementById("overlaylink").classList.remove("hide");
+            document.getElementById("docklink").classList.remove("hide");
+            document.getElementById("overlaylink").innerHTML = "<p>Add this link as a browser source in OBS.<br>" +
+                "<a style='word-break:break-all;' href='" + overlayUrl + "' target='_blank'>" + overlayUrl + "</a></p>";
+            document.getElementById("docklink").innerHTML = "<p>Add this link as a custom dock in OBS.<br>" +
+                "<a style='word-break:break-all;' href='" + dockUrl + "' target='_blank'>" + dockUrl + "</a></p>";
+        }
+    });
+</script>
+<div class="text-right m-4"><a class="btn btn-link" href="https://github.com/teklynk/twitch_shoutout" target="_blank">Github</a>
+</div>
+</body>
+</html>

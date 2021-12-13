@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Chat - Overlay</title>
+    <title>Twitch Chat Highlight - Overlay</title>
     <link href="assets/css/overlay.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body style="display: none;">
 
 <div id="overlay_avatar"></div>
 <div id="overlay_username"></div>
@@ -15,23 +15,30 @@
 <script src="assets/js/jquery_351.min.js"></script>
 <script src="assets/js/overlay.js"></script>
 <script>
-    // Check every second if a new message has been clicked.
+    // Check if a new message has been added to localStorage.
     setInterval(function () {
-        if (localStorage.getItem('Clicked_Usermsg') !== document.getElementById('overlay_message').innerHTML) {
-            $("body").css('display', 'block');
+        if (localStorage.getItem(channelName + '_Clicked_Usermsg') !== document.getElementById('overlay_message').innerHTML) {
+
+            getInfo(localStorage.getItem(channelName + '_Clicked_Username').toLowerCase(), function (data) {
+                document.getElementById('overlay_avatar').innerHTML = "<img class='image logo' src='" + data.data[0]['profile_image_url'] + "' alt=''/>";
+            });
+
+            document.getElementById('overlay_username').innerHTML = localStorage.getItem(channelName + '_Clicked_Username');
+            document.getElementById('overlay_message').innerHTML = localStorage.getItem(channelName + '_Clicked_Usermsg');
+
+            $("body").fadeIn();
+
+        }
+
+        if (localStorage.getItem(channelName + '_Clicked_Username') === '') {
+
+            $("body").hide();
+            $("#overlay_avatar").empty();
             $("#overlay_username").empty();
             $("#overlay_message").empty();
-            $("#overlay_avatar").empty();
-            getInfo(localStorage.getItem('Clicked_Username').toLowerCase(), function (data) {
-                $("<img class='image logo' src='" + data.data[0]['profile_image_url'] + "' alt=''/>").appendTo("#overlay_avatar");
-            });
-            document.getElementById('overlay_username').innerHTML = localStorage.getItem('Clicked_Username');
-            document.getElementById('overlay_message').innerHTML = localStorage.getItem('Clicked_Usermsg');
+
         }
-        if (localStorage.getItem('Clicked_Username') === '') {
-            $("body").css('display', 'none');
-        }
-    }, 1000);
+    }, 500);
 </script>
 </body>
 </html>

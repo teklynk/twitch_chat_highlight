@@ -16,7 +16,7 @@ function autoScroll() {
 
 function stopAutoScroll() {
     clearInterval(scroll);
-    document.getElementById('chat').scrollTop = 0;
+    document.getElementById('chat').scrollTop = 10000;
 }
 
 function startAutoScroll() {
@@ -258,8 +258,8 @@ function handleChat(channel, user, message, self) {
 
         $("#" + elementId).css('background-color', '#ccc');
 
-        localStorage.setItem('Clicked_Username', $("#" + elementId + " span.chat-name").html());
-        localStorage.setItem('Clicked_Usermsg', $("#" + elementId + " span.chat-message").html());
+        localStorage.setItem(channelName + '_Clicked_Username', $("#" + elementId + " span.chat-name").html());
+        localStorage.setItem(channelName + '_Clicked_Usermsg', $("#" + elementId + " span.chat-message").html());
     });
 
 }
@@ -388,6 +388,6 @@ client.connect();
 
 //clear overlay message
 document.getElementById('click-clear').addEventListener('click', function (event) {
-    localStorage.setItem('Clicked_Username', '');
-    localStorage.setItem('Clicked_Usermsg', '');
+    localStorage.setItem(channelName + '_Clicked_Username', '');
+    localStorage.setItem(channelName + '_Clicked_Usermsg', '');
 }, false);
