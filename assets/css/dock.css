@@ -51,8 +51,7 @@ div.chat-line {
     padding: 12px;
     text-shadow: 1px 1px #000000 !important;
     background: #383838;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.5);
-    /*background: linear-gradient(to bottom right, #d2040480, #0019d680);*/
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
 }
 
 .container-fluid {
