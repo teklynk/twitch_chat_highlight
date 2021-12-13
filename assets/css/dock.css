@@ -1,0 +1,204 @@
+@import  url('https://fonts.googleapis.com/css2?family=Basic');
+html,body {
+    overflow: auto;
+}
+
+.controls {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    border-bottom: solid 1px rgba(204, 204, 204, 0.5);
+}
+div.chat-line:first-child {
+    margin-top: 40px !important;
+}
+div.chat-line:last-child {
+    margin-bottom: 4px !important;
+}
+
+.chat-title {
+    text-shadow: 1px 1px #000000 !important;
+    background: #33127d !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-family: Basic !important;
+}
+
+.chat-badges {
+    font-size: 18px !important;
+}
+
+.chat-name {
+    font-family: Basic !important;
+    font-size: 18px !important;
+}
+
+.chat-colon {
+    font-family: Basic  !important;
+    color: #ffffff !important;
+    font-size: 18px !important;
+}
+
+.chat-message, .chat-hosting-yes, .chat-notice{
+    font-family: Basic !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+}
+
+div.chat-line {
+    cursor: pointer;
+    padding: 12px;
+    text-shadow: 1px 1px #000000 !important;
+    background: #d20404;
+    background: linear-gradient(to bottom right, #d2040480, #0019d680);
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.chat-title {
+    width: 100%;
+    z-index: 99;
+}
+
+#chat {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.chat-line[data-faded] {
+    opacity: .8;
+}
+
+.chat-line.chat-notice {
+    opacity: 1;
+}
+
+.chat-line.chat-notice[data-level="-4"] {
+    color: #765eed;
+}
+
+.chat-line.chat-notice[data-level="-3"] {
+    color: #1aa2e6;
+}
+
+.chat-line.chat-notice[data-level="-2"] {
+    color: #1ae6a2;
+}
+
+.chat-line.chat-notice[data-level="-1"] {
+    color: #5ee61a;
+}
+
+.chat-line.chat-notice[data-level="1"] {
+    color: red;
+}
+
+.chat-line.chat-notice[data-level="2"] {
+    color: red;
+}
+
+.chat-line.chat-notice[data-level="3"] {
+    color: red;
+}
+
+.chat-line.chat-notice[data-level="4"] {
+    color: red;
+}
+
+.chat-channel {
+    margin-right: .375em;
+}
+
+.chat-channel:before {
+    content: '#';
+}
+
+.chat-colon {
+    margin-right: .375em;
+    margin-left: 2px;
+}
+
+.chat-line:not(.chat-action) .chat-colon:after {
+    content: ':';
+}
+
+.chat-line:not(.chat-action) .chat-message {
+    color: inherit;
+}
+
+.emoticon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: -5px 0;
+    display: inline-block;
+    vertical-align: middle !important;
+    height: 1.5em;
+}
+
+.chat-badges > div {
+    margin-bottom: 1px;
+    margin-right: 4px;
+    border-radius: 2px;
+    height: 1em;
+    min-width: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.chat-badge-mod {
+    background-color: #33ae0a;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1);
+}
+
+.chat-badge-vip {
+    background-color: #6441a4;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/bd444ec6-8f34-4bf9-91f4-af1e3428d80f/1);
+}
+
+.chat-badge-turbo {
+    background-color: #6441a4;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/3);
+}
+
+.chat-badge-broadcaster {
+    background-color: #e71818;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1);
+}
+
+.chat-badge-admin {
+    background-color: #faaf19;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/9ef7e029-4cdf-4d4d-a0d5-e2b3fb2583fe/1);
+}
+
+.chat-badge-staff {
+    background-color: #200f33;
+    background-image: url(https://static-cdn.jtvnw.net/badges/v1/d97c37bd-a6f5-4c38-8f57-4e4bef88af34/1);
+}
+
+.chat-badge-bot {
+    background-image: url(https://cdn.betterttv.net/tags/bot.png);
+}
+
+[class*="chat-delete"] {
+    font-style: inherit;
+}
+
+.chat-delete-timeout {
+    font-style: inherit;
+}
+
+.chat-delete-clear {
+    font-style: inherit;
+}
