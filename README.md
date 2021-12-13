@@ -8,6 +8,8 @@ The site will generate 2 links. One for the browser source overlay and one for t
 
 ### [Try it here](https://twitch-chat-highlight.pages.dev/)
 
+# Sample
+![sample1](https://github.com/teklynk/twitch_chat_highlight/blob/main/screenshots/Screenshot%20from%202021-12-13%2014-17-34.png?raw=true)
 
 ### Custom CSS
 
