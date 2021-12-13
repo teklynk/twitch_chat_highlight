@@ -2,14 +2,24 @@
 
 ### What is this?
 
-It allows you to click on a chat message and have it display on stream inside an overlay. The chat sits in a custom dock in OBS. 
+It allows you to click on a chat message and have it display on stream inside an overlay. The chat sits in a custom dock
+in OBS.
 
 The site will generate 2 links. One for the browser source overlay and one for the custom dock.
 
 ### [Try it here](https://twitch-chat-highlight.pages.dev/)
 
-# Sample
+### Sample
+
 ![sample1](https://github.com/teklynk/twitch_chat_highlight/blob/main/screenshots/Screenshot%20from%202021-12-13%2014-17-34.png?raw=true)
+
+### Creating a custom dock in OBS
+
+![sample1](https://github.com/teklynk/twitch_chat_highlight/blob/main/screenshots/Screenshot%20from%202021-12-13%2016-28-30.png?raw=true)
+
+OBS Toolbar: View > Docks > Custom Browser Docks... This will open a box for you to add a Dock name and the URL for the
+Dock. Once added, click Apply. You can now click and drag the dock window into the OBS interface if View > Lock UI is
+disabled. Dragging the dock onto another element, will create a tabbed dock like pictured.
 
 ### Custom CSS
 
