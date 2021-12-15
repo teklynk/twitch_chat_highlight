@@ -2,13 +2,20 @@
 
 ### What is this?
 
-It allows you to highlight a chat message and have it display in an overlay. Could be used on a Talk Show or Just Chatting stream when answering viewer questions on stream. This is similar to [Social Stream Ninja](https://github.com/steveseguin/social_stream#readme) however, I feel this is much simpler and low tech. No browser extensions, no Twitch chat pop-out window and is easier to implement.
+It allows you to highlight a chat message and have it display in an overlay. Could be used on a Talk Show or Just
+Chatting stream when answering viewer questions on stream. This is similar
+to [Social Stream Ninja](https://github.com/steveseguin/social_stream#readme) however, I feel this is much simpler and
+low tech. No browser extensions, no Twitch chat pop-out window and is easier to implement.
 
-**Notes:** 
+This project uses [TMI.JS](https://tmijs.com/) to connect to Twitch chat anonymously.
+
+**Notes:**
+
 - This only works with Twitch chat.
 - Chat must be docked inside OBS in order for it to work with the browser source overlay.
 
 ### [Try it here](https://twitch-chat-highlight.pages.dev/)
+
 The site will generate 2 links. One for the browser source overlay and one for the custom dock.
 
 ### Samples
