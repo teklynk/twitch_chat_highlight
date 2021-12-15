@@ -24,3 +24,41 @@ function getInfo(channelName, callback) {
     xhrI.send();
 }
 
+// Check if a new message has been added to localStorage.
+setInterval(function () {
+
+    if (localStorage.getItem(channelName + '_Clicked_Usermsg') !== document.getElementById('overlay_message').innerHTML) {
+
+        let profileImage = 'assets/images/default.jpg';
+
+        if (localStorage.getItem(channelName + '_Clicked_Usermsg') !== '') {
+            $("body").fadeOut(function () {
+                document.getElementById('overlay_avatar').src = profileImage;
+                document.getElementById('overlay_username').innerHTML = '';
+                document.getElementById('overlay_message').innerHTML = '';
+            });
+
+        }
+
+        if (document.getElementById('overlay_message').innerHTML !== '' || localStorage.getItem(channelName + '_Clicked_Usermsg') !== '') {
+            getInfo(localStorage.getItem(channelName + '_Clicked_Username').toLowerCase(), function (data) {
+                profileImage = data.data[0]['profile_image_url'];
+            });
+            $("body").fadeIn(function () {
+                document.getElementById('overlay_avatar').src = profileImage;
+                document.getElementById('overlay_username').innerHTML = localStorage.getItem(channelName + '_Clicked_Username');
+                document.getElementById('overlay_message').innerHTML = localStorage.getItem(channelName + '_Clicked_Usermsg');
+            });
+
+        }
+
+    }
+
+    if (localStorage.getItem(channelName + '_Clicked_Usermsg') === '') {
+
+        $("body").fadeOut();
+
+    }
+
+}, 1000);
+
