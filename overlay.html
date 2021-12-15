@@ -8,7 +8,7 @@
 </head>
 <body style="display: none;">
 
-<div id="overlay_avatar"></div>
+<div><img id="overlay_avatar" class='image logo' src='assets/images/default.jpg' alt=''/></div>
 <div id="overlay_username"></div>
 <div id="overlay_message"></div>
 
@@ -19,26 +19,32 @@
     setInterval(function () {
         if (localStorage.getItem(channelName + '_Clicked_Usermsg') !== document.getElementById('overlay_message').innerHTML) {
 
-            getInfo(localStorage.getItem(channelName + '_Clicked_Username').toLowerCase(), function (data) {
-                document.getElementById('overlay_avatar').innerHTML = "<img class='image logo' src='" + data.data[0]['profile_image_url'] + "' alt=''/>";
-            });
+            if (localStorage.getItem(channelName + '_Clicked_Usermsg') !== '') {
+                $("body").fadeOut(function () {
+                    document.getElementById('overlay_avatar').src = 'assets/images/default.jpg';
+                    document.getElementById('overlay_username').innerHTML = '';
+                    document.getElementById('overlay_message').innerHTML = '';
+                });
+            }
 
-            document.getElementById('overlay_username').innerHTML = localStorage.getItem(channelName + '_Clicked_Username');
-            document.getElementById('overlay_message').innerHTML = localStorage.getItem(channelName + '_Clicked_Usermsg');
-
-            $("body").fadeIn();
+            if (document.getElementById('overlay_message').innerHTML !== '' || localStorage.getItem(channelName + '_Clicked_Usermsg') !== '') {
+                $("body").fadeIn(function () {
+                    getInfo(localStorage.getItem(channelName + '_Clicked_Username').toLowerCase(), function (data) {
+                        document.getElementById('overlay_avatar').src = data.data[0]['profile_image_url'];
+                    });
+                    document.getElementById('overlay_username').innerHTML = localStorage.getItem(channelName + '_Clicked_Username');
+                    document.getElementById('overlay_message').innerHTML = localStorage.getItem(channelName + '_Clicked_Usermsg');
+                });
+            }
 
         }
 
-        if (localStorage.getItem(channelName + '_Clicked_Username') === '') {
+        if (localStorage.getItem(channelName + '_Clicked_Usermsg') === '') {
 
-            $("body").hide();
-            $("#overlay_avatar").empty();
-            $("#overlay_username").empty();
-            $("#overlay_message").empty();
+            $("body").fadeOut();
 
         }
-    }, 500);
+    }, 1000);
 </script>
 </body>
 </html>

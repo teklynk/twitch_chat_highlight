@@ -1,43 +1,24 @@
-@import  url('https://fonts.googleapis.com/css2?family=Basic');
-html,body {
+@import url('https://fonts.googleapis.com/css2?family=Basic');
+
+html, body {
     overflow: hidden;
-    margin: 0;
+    margin: 12px 0;
     padding: 0;
     background: transparent;
 }
 
 #overlay_avatar {
-    display: inline-block;
-    margin-left: 18px;
-    z-index: 999;
-}
-#overlay_avatar img {
+    background: black;
     vertical-align: middle;
     position: absolute;
     border-radius: 100%;
     height: 80px;
-    z-index: 3;
     border: solid 4px #33127c;
     margin: 0 0 0 10px;
     padding: 0;
+    z-index: 3;
 }
-#overlay_username {
-    text-align: center;
-    text-shadow: 1px 1px #000000 !important;
-    border-radius: 2px 2px 0 0;
-    font-weight: bold;
-    color: white;
-    vertical-align: middle;
-    position: absolute;
-    margin-left: 60px;
-    font-size: 20px !important;
-    font-family: Basic !important;
-    background: #33127c;
-    padding: 4px 16px 4px 52px;
-    z-index: 1;
-    min-width: 100px;
-    box-shadow: 6px 6px rgb(75, 75, 75);
-}
+
 #overlay_message {
     text-align: center;
     text-shadow: 1px 1px #000000 !important;
@@ -56,7 +37,28 @@ html,body {
     z-index: 2;
     box-shadow: 6px 6px rgb(75, 75, 75);
     min-width: 200px;
+    min-height: 40px;
 }
+
+#overlay_username {
+    text-align: center;
+    text-shadow: 1px 1px #000000 !important;
+    border-radius: 2px 2px 0 0;
+    font-weight: bold;
+    color: white;
+    vertical-align: middle;
+    position: absolute;
+    margin-left: 60px;
+    font-size: 20px !important;
+    font-family: Basic !important;
+    background: #33127c;
+    padding: 4px 16px 4px 52px;
+    z-index: 1;
+    min-width: 100px;
+    min-height: 25px;
+    box-shadow: 6px 6px rgb(75, 75, 75);
+}
+
 #overlay_message .emoticon {
     vertical-align: middle;
     height: 32px;
