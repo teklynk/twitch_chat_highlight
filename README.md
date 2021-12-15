@@ -32,19 +32,15 @@ Add this CSS to the OBS browser source and modify as needed.
 
 ```
 #overlay_avatar {
-    display: inline-block;
-    margin-left: 18px;
-    z-index: 999;
-}
-#overlay_avatar img {
+    background: black;
     vertical-align: middle;
     position: absolute;
     border-radius: 100%;
     height: 80px;
-    z-index: 3;
     border: solid 4px #33127c;
     margin: 0 0 0 10px;
     padding: 0;
+    z-index: 3;
 }
 #overlay_username {
     text-align: center;

@@ -37,7 +37,6 @@ setInterval(function () {
                 document.getElementById('overlay_username').innerHTML = '';
                 document.getElementById('overlay_message').innerHTML = '';
             });
-
         }
 
         if (document.getElementById('overlay_message').innerHTML !== '' || localStorage.getItem(channelName + '_Clicked_Usermsg') !== '') {
@@ -49,16 +48,12 @@ setInterval(function () {
                 document.getElementById('overlay_username').innerHTML = localStorage.getItem(channelName + '_Clicked_Username');
                 document.getElementById('overlay_message').innerHTML = localStorage.getItem(channelName + '_Clicked_Usermsg');
             });
-
         }
 
     }
 
     if (localStorage.getItem(channelName + '_Clicked_Usermsg') === '') {
-
         $("body").fadeOut();
-
     }
 
 }, 1000);
-

@@ -1,6 +1,7 @@
 @import  url('https://fonts.googleapis.com/css2?family=Basic');
 html,body {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .controls {

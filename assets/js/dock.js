@@ -254,9 +254,8 @@ function handleChat(channel, user, message, self) {
 
         let elementId = $(this).attr('id');
 
-        $(".chat-line").css('background-color', '');
-
-        $("#" + elementId).css('background-color', '#000');
+        $(".chat-line").css({'background-color': '', 'border-left': 'none'});
+        $("#" + elementId).css({'background-color': 'black', 'border-left': 'solid 8px red'});
 
         localStorage.setItem(channelName + '_Clicked_Username', $("#" + elementId + " span.chat-name").html());
         localStorage.setItem(channelName + '_Clicked_Usermsg', $("#" + elementId + " span.chat-message").html());
