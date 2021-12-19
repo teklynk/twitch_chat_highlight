@@ -3,9 +3,7 @@
 ### What is this?
 
 It allows you to highlight a chat message and have it display in an overlay. Could be used on a Talk Show or Just
-Chatting stream when answering viewer questions on stream. This is similar
-to [Social Stream Ninja](https://github.com/steveseguin/social_stream#readme) however, I feel this is much simpler and
-low tech. No browser extensions, no Twitch chat pop-out window and is easier to implement.
+Chatting stream when answering viewer questions on stream.
 
 This project uses [TMI.JS](https://tmijs.com/) to connect to Twitch chat anonymously.
 
@@ -13,6 +11,7 @@ This project uses [TMI.JS](https://tmijs.com/) to connect to Twitch chat anonymo
 
 - This only works with Twitch chat.
 - Chat must be docked inside OBS in order for it to work with the browser source overlay.
+- Be sure that you are using the latest version of OBS.
 
 ### [Try it here](https://twitch-chat-highlight.pages.dev/)
 
