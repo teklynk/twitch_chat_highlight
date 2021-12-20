@@ -12,16 +12,26 @@ function autoScroll() {
     let elem = document.getElementById('chat');
     $('#chat').height(browserWindowHeight);
     elem.scrollTop = elem.scrollHeight;
+    $('.autoscroll-enable').addClass('active');
+    $('.autoscroll-disable').removeClass('active');
 }
 
 function stopAutoScroll() {
     clearInterval(scroll);
-    document.getElementById('chat').scrollTop = 10000;
+    document.getElementById('chat').scrollTop = 100000;
+    $('.autoscroll-disable').addClass('active');
+    $('.autoscroll-enable').removeClass('active');
 }
 
 function startAutoScroll() {
     scroll = setInterval(autoScroll, 500);
 }
+
+//clear overlay message
+document.getElementById('click-clear').addEventListener('click', function (event) {
+    localStorage.setItem(channelName + '_Clicked_Username', '');
+    localStorage.setItem(channelName + '_Clicked_Usermsg', '');
+}, false);
 
 let channelName = getUrlParameter('channel');
 let refreshRate = 0;
@@ -384,9 +394,3 @@ client.addListener('crash', function () {
 });
 
 client.connect();
-
-//clear overlay message
-document.getElementById('click-clear').addEventListener('click', function (event) {
-    localStorage.setItem(channelName + '_Clicked_Username', '');
-    localStorage.setItem(channelName + '_Clicked_Usermsg', '');
-}, false);
