@@ -68,7 +68,9 @@
         if (mainAccount) {
             let srcURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
             let overlayUrl = srcURL + "overlay.html?channel=" + mainAccount.toLowerCase();
+            overlayUrl = overlayUrl.replace("index.htmloverlay.html", "overlay.html");
             let dockUrl = srcURL + "dock.html?channel=" + mainAccount.toLowerCase();
+            dockUrl = dockUrl.replace("index.htmldock.html", "dock.html");
             document.getElementById("overlaylink").classList.remove("hide");
             document.getElementById("docklink").classList.remove("hide");
             document.getElementById("overlaylink").innerHTML = "<p>Add this link as a browser source in OBS.<br>" +
