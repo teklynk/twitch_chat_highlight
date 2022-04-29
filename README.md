@@ -5,6 +5,8 @@
 It allows you to highlight a chat message and have it display in an overlay. Could be used on a Talk Show or Just
 Chatting stream when answering viewer questions on stream.
 
+Future developement can be tracked here: [https://github.com/teklynk/twitch_chat_highlight/projects/1](https://github.com/teklynk/twitch_chat_highlight/projects/1)
+
 This project uses [TMI.JS](https://tmijs.com/) to connect to Twitch chat anonymously.
 
 **Notes:**
